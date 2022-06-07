@@ -1,0 +1,12 @@
+.intro-section {
+    width: 265px;
+    margin-top: 50px;
+  }
+  
+  .intro-text {
+    font-family: var(--font-lora);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--grey);
+  }

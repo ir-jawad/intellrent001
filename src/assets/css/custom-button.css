@@ -1,0 +1,15 @@
+.special-btn {
+    background-color: var(--blue) !important;
+    border-radius: 4px !important;
+    padding: 12px 40px !important;
+    font-family: var(--font) !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    line-height: 24px !important;
+    color: #fff !important;
+    border: 1px solid var(--blue) !important;
+  }
+  
+  .special-btn:hover {
+    background-color: var(--blue) !important;
+  }

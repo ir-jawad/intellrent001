@@ -1,0 +1,7 @@
+.mini__header-brand {
+    font-family: var(--font);
+  }
+  
+  .mini__header-special {
+    color: var(--blue);
+  }

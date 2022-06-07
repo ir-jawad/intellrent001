@@ -1,0 +1,89 @@
+.register {
+    background-color: var(--bg-color);
+  }
+  
+  .register-heading {
+    font-family: var(--font);
+    color: var(--grey);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 32px;
+  }
+  
+  .register-content {
+    font-family: var(--font);
+    color: var(--grey);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .google-btn {
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    padding: 10px 0;
+  }
+  
+  .google-btn p {
+    font-family: var(--font);
+    color: var(--grey);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  .reg-form {
+    background-color: #fff;
+    padding: 50px 40px;
+    margin: 20px 0;
+    border-radius: 24px;
+    box-shadow: 0px -4px 32px rgba(15, 172, 188, 0.1);
+    width: 375px;
+    height: 528px;
+  }
+  
+  .divider-text {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #aebbbd;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #aebbbd;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+  }
+  
+  .divider-text span {
+    background: #fff;
+    padding: 0 10px;
+  }
+  
+  .signup-condition {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  
+  .terms {
+    color: var(--blue);
+  }
+  
+  .welcome-sec {
+    width: 375px;
+  }
+  
+  .bottom-special,
+  .bottom-text {
+    font-family: var(--font);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #5e6566;
+  }
+  
+  .bottom-special {
+    color: var(--blue);
+  }

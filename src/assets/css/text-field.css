@@ -1,0 +1,5 @@
+.form-field {
+    border: 1px solid #e6eff0 !important;
+    background-color: var(--bg-color) !important;
+    font-family: var(--font) !important;
+  }
