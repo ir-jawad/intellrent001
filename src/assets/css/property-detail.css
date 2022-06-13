@@ -45,3 +45,11 @@
     line-height: 20px;
     color: #303333;
   }
+
+  .position-relative {
+    top:-37px;
+  }
+.custom-bottom-btn {
+  align-items: flex-end;
+  height: 5rem;
+}

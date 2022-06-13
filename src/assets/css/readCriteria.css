@@ -1,0 +1,27 @@
+.docx-container {
+  width: 456px;
+  height: 666px;
+}
+.rentel-title {
+  width: 392px;
+  height: 24px;
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #303333;
+}
+.text-container {
+  width: 440px;
+  height: 618px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  overflow: scroll;
+  overflow-x: hidden;
+}

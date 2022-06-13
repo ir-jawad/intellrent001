@@ -1,0 +1,10 @@
+.custom-progress {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 440px;
+  height: 32px;
+  position: relative;
+  top: -2.7rem;
+}

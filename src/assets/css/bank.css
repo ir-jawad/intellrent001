@@ -1,0 +1,14 @@
+.position-relative {
+  top: -28px;
+}
+.image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  width: 440px;
+  height: 136px;
+  background-color: gray;
+}
