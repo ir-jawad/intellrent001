@@ -7,19 +7,22 @@ import Review from "../utils/Review";
 
 import Vector19 from "../assets/images/Vector19.png";
 
-import "../assets/css/address.css";
-
 const mapStyles = {
   width: "100%",
   height: "100%",
 };
 
 const Address = (props) => {
-  const { show, text, handleState } = props;
+  const { show, text, handleState, screenSize } = props;
 
   return (
-    <div>
-      <Intro text={text} show={show} className="custom-intro-container" />
+    <React.Fragment>
+      <Intro
+        text={text}
+        show={show}
+        className="custom-intro-container"
+        screenSize={screenSize}
+      />
       <div className="address-container">
         <div className="">
           <Map
@@ -35,7 +38,7 @@ const Address = (props) => {
         <div></div>
       </div>
       <Review onClick={() => handleState()} btnText=" Home" />
-    </div>
+    </React.Fragment>
   );
 };
 

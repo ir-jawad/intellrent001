@@ -2,6 +2,9 @@ import React from "react";
 
 import Img from "../utils/Image";
 import Review from "../utils/Review";
+import Text from "../utils/Text";
+
+import { readDocx } from "./dummy";
 
 import Vector20 from "../assets/images/Vector20.png";
 import Vector21 from "../assets/images/Vector21.png";
@@ -10,46 +13,62 @@ import "../assets/css/readCriteria.css";
 
 const ReadRentelCriteria = (props) => {
   const { handleState, show } = props;
+
   return (
     <div className="docx-container">
       <div className="d-flex">
-        <Img
+        <Img width={16} height={16}
           onClick={() => handleState(show)}
           src={Vector20}
-          width="16px"
-          height="16px"
         />
         <p className="rentel-title">Rental Criteria </p>
-        <Img src={Vector21} width="16px" height="16px" />
+        <Img src={Vector21} width={16} height={16} />
       </div>
       <div className="text-container">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr Sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-        ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-        elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-        est Lorem ipsum dolor sit amet. At vero eos et accusam et justo Duo
-        dolores et ea rebum. Stet clita kasd gubergren No sea takimata sanctus
-        est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-        sadipscing elit Duo dolores et ea rebum. Stet clita kasd gubergren No
-        sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-        sit amet, consetetur sadipscing elitDuo dolores et ea rebum. Stet clita
-        kasd gubergren No sea takimata sanctus est Lorem ipsum dolor sit amet.
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitDuo
+        {readDocx?.map((docx, index) => {
+          return (
+            <ul key={index}>
+              <li className="list-unstyled d-flex align-content-start custom-list-docx">
+                <div>
+                  <Text className="secondary"
+                    fontSize = {16} color="#000000">
+                    {docx.heading}
+                  </Text>
+                  <div>
+                    <Text className="secondary"
+                      fontSize={12.9} color="#303333" width="24rem">
+                      {docx.paragraph}
+                    </Text>
+                  </div>
+                  {docx.list
+                    ? docx.list.map((item, index) => {
+                        return (
+                          <ul key={index}>
+                            <li className="">
+                              <Text className="secondary"
+                                  fontSize={12.9} color="#303333"
+                                >
+                                {item}
+                              </Text>
+                            </li>
+                          </ul>
+                        );
+                      })
+                    : null}
+                </div>
+              </li>
+            </ul>
+          );
+        })}
       </div>
-      <Review
-        onClick={() => handleState()}
-        className="criteria-outline"
-        show={show}
-        btnText=" I have read the Rental Criteria"
-      />
+      <div className="btn-docx">
+        <Review
+          onClick={() => handleState()}
+          className="criteria-outline"
+          show={show}
+          btnText=" I have read the Rental Criteria"
+        />
+      </div>
     </div>
   );
 };

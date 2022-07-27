@@ -8,3 +8,121 @@
   --font: "Open Sans";
   --font-lora: "Lora";
 }
+.custom-bg-bottom {
+  position: absolute;
+  width: 375px;
+  height: 211px;
+  left: 0px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 37.5%
+  ) !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.border-1 {
+  border: 1px solid #e6eff0 !important;
+  border-radius: 4px !important;
+}
+.border-2 {
+  border: 1px solid #aebbbd !important;
+  border-radius: 4px !important;
+}
+.bg-min {
+  background: #f6fbff !important;
+}
+.row-first {
+  height: 35%;
+}
+.bg-special {
+  background-image: url("../src/assets/images/Group10.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 194.2px;
+}
+.phone-input {
+  color: #303333;
+  outline: none !important;
+  border: none;
+}
+
+.main-container {
+  background-color: var(--bg-color);
+}
+.bg-back {
+  background: url('./assets//images/BackTriangle.png') right 28% top 3% no-repeat , url('./assets//images/BackTriangle.png') left -10% bottom -35% no-repeat;
+  z-index: 2124 !important;
+}
+.bg-back-1 {
+  background: url('./assets//images/BackTriangle.png') right 15% top 3% no-repeat , url('./assets//images/BackTriangle.png') left -10% bottom -35% no-repeat;
+  z-index: 2124 !important;
+}
+.mt-3 {
+  background-color: none !important;
+  box-shadow: none !important;
+}
+.img-upload {
+  background: #f7fafa;
+  border: 1px dashed #d2d6d6;
+  border-radius: 4px;
+}
+.active {
+  border: 1px solid #1496a2;
+  box-shadow: 0px 4px 20px rgba(15, 172, 188, 0.3);
+  border-radius: 6px;
+  list-style-type: none;
+}
+.inactive {
+  list-style-type: none;
+}
+
+.info-form {
+  position: relative;
+  height: 0px !important;
+  background: #f7fafa !important;
+  border: 1px solid #e6eff0 !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+}
+.input-set {
+  position: relative;
+  height: 0px !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+}
+.input-label {
+  display: flex;
+  background: #f7fafa;
+  height: 50px;
+  justify-content: flex-start;
+  margin-top: 4px;
+  border: 1px solid #e6eff0;
+  border-radius: 4px;
+}
+.fix-read {
+  height: 160% !important;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 2px;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar-track {
+  background: white;
+}
+::-webkit-scrollbar-thumb {
+  background: #e6eff0;
+  border-radius: 100px;
+}
+.custom-step-container {
+  box-sizing: border-box;
+  width: 75.75px !important;
+  height: 84px;
+}

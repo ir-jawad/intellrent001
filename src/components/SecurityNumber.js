@@ -2,32 +2,42 @@ import React from "react";
 
 import OutlineButton from "../utils/OutlineButton";
 import Intro from "../utils/Intro";
-
-import "../assets/css/security.css";
+import ScrollAble from "../utils/Scroll";
 
 const SecurityNumber = (props) => {
-  const { show, text, handleState } = props;
+  const { show, text, handleState, setState, screenSize } = props;
 
   return (
-    <div>
+    <React.Fragment>
+      <ScrollAble mobStyle={324}>
       <Intro
+        onClick={() => setState(show - 1)}
         text={text}
         show={show}
         btnTxt="Edit phone number"
-        className="custom-intro-container"
+        outline="outline-primary"
+        size="xxl"
+        screenSize={screenSize}
       />
-      <div className="social-container">
+      <div className="w-100 flex-column p-0 d-flex align-items-end mt-2 container">
         <OutlineButton
+          outline="outline-secondary"
+          size="mdx"
           onClick={() => handleState("socialNext")}
-          className="y-btn"
         >
           Yes
         </OutlineButton>
-        <OutlineButton onClick={() => handleState("")} className="n-btn">
+        <OutlineButton
+          outline="outline-primary"
+          size="xxl"
+          top={15}
+          onClick={() => handleState("")}
+        >
           No
         </OutlineButton>
       </div>
-    </div>
+      </ScrollAble>
+    </React.Fragment>
   );
 };
 

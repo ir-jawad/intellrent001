@@ -1,83 +1,123 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { ListGroup } from "react-bootstrap";
 
 import OutlineButton from "../utils/OutlineButton";
-
 import Img from "../utils/Image";
 import Text from "../utils/Text";
 import Intro from "../utils/Intro";
 import Review from "../utils/Review";
+import ScrollAble from "../utils/Scroll";
 
 import { rentalDetail } from "./dummy";
 
-import "../assets/css/criteria.css";
-
 const RentelCriteria = (props) => {
-  const { text, show, setCriteria, handleState } = props;
+  const { text, show, setCriteria, setKeyPoints, setState, screenSize } = props;
+
   return (
-    <div>
-      <Intro
-        text={text}
-        show={show}
-        setCriteria={setCriteria}
-        btnTxt="View Property"
-      />
-      <div className="d-flex flex-column">
-        {rentalDetail.map((data, index) => {
-          return (
-            <ul className="list-container" key={index}>
-              <div className="list-content">
-                <li className="custom-img">
-                  <Img class="imgStyle" src={data.image} />
-                </li>
-                <li
-                  className={
-                    data.credit
-                      ? "d-flex justify-content-between list-text"
-                      : "list-text"
-                  }
-                >
-                  {data.description}
-                  {data.ref && <Img src={data.ref} />}
-                </li>
-                {data.price ? (
-                  <div className="secondary-text">
-                    <li className="sm-txt">{data.price}</li>
-                  </div>
-                ) : data.media ? (
-                  <div>
-                    <OutlineButton className="custom-outline">
-                      <Text className="sm-btn-txt">Connect LinkedIn</Text>
-                    </OutlineButton>
-                  </div>
-                ) : data.credit ? (
-                  <div className="d-flex flex-row justify-content-between align-content-center">
-                    <div className="small-txt">
-                      <li>
-                        <Text className="sub-txt">{data.credit}</Text>
-                      </li>
+    <React.Fragment>
+      <ScrollAble mobStyle={50}>
+        <Intro onClick={()=> {setKeyPoints(false); setState(show-3)}}
+          text={text}
+          show={show}
+          setCriteria={setCriteria}
+          btnTxt="View Property"
+          screenSize={screenSize}
+          outline="outline-secondary"
+          size="xxl"
+        />
+        <ListGroup className="w-100 p-0">
+          {rentalDetail.map((item, index) => {
+            return (
+              <ListGroup.Item
+                key={index}
+                className="mt-2 w-100 p-0 border-1 rounded"
+              >
+                <div className="w-100 p-0 d-flex ">
+                  <div className="p-0 d-flex w-100 ">
+                    <div className="p-2 text-center">
+                      {" "}
+                      <Img src={item.image} customwidth={16} />
+                    </div>
+                    <div className="w-100 d-flex justify-content-between p-1">
+                      {" "}
+                      <Text className='' top={10} fontSize={12} color="#303333">
+                        {item.description}
+                      </Text>
+                      <div className="">
+                        <div className="">
+                          {item.price && (
+                            <Text  top={10} background="#E6F8FA" color="#1496A2">
+                              {item.price}
+                            </Text>
+                          )}
+                        </div>
+                        <div className="">
+                          {" "}
+                          {item.process && (
+                            <div className="mt-1">
+                              <OutlineButton width={76}
+                                outline="outline-secondary"
+                                size="sm"
+                              >
+                                {" "}
+                                <Text  color="#1496A2" left={-2} lineheight={9}>
+                                  Upload Now
+                                </Text>
+                              </OutlineButton>
+                            </div>
+                          )}
+                        </div>
+                        <div>
+                          {item.media && (
+                            <div className="mt-1">
+                              <OutlineButton size="sm" width={100}>
+                                <Text lineheight={9} left={-1} color="#1496A2">
+                                  Connect LinkedIn
+                                </Text>
+                              </OutlineButton>
+                            </div>
+                          )}
+                        </div>
+                        <div className="w-100">
+                          <div className=" d-flex ">
+                            <div className="">
+                              {item.ref && <Img src={item.ref} />}
+                            </div>
+                            <div className="w-100">
+                              {item.credit && (
+                                <Text
+                                  top={8}
+                                  background="#E6F8FA"
+                                  color="#1496A2"
+                                >
+                                  {item.credit}
+                                </Text>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                ) : (
-                  data.process && (
-                    <div>
-                      <OutlineButton className="custom-outline">
-                        <Text className="sm-btn-txt">Upload Now</Text>
-                      </OutlineButton>
-                    </div>
-                  )
-                )}
-              </div>
-            </ul>
-          );
-        })}
-      </div>
-      <Review
-        onClick={() => handleState()}
-        show={show}
-        btnText="Yes, I understand. Continue"
-        className="btn-outline"
-      />
-    </div>
+                </div>
+              </ListGroup.Item>
+            );
+          })}
+        </ListGroup>
+        <div className="mt-5 container w-100 text-end p-0">
+          <Review
+            outline="outline-secondary"
+            size="xl"
+            onClick={() => {
+              setState(show + 1);
+              setKeyPoints(false);
+            }}
+            show={show}
+            btnText="Yes, I understand. Continue"
+          />
+        </div>
+      </ScrollAble>
+    </React.Fragment>
   );
 };
 export default RentelCriteria;

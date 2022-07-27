@@ -1,38 +1,15 @@
-.lisence-container {
-  position: relative;
-  top: -40px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px 24px;
-  gap: 15px;
-  width: 440px;
-  height: 280.91px;
-  background: #ffffff;
-  border: 1px solid #e6eff0;
-  box-shadow: 0px -4px 32px rgba(15, 172, 188, 0.1);
-  border-radius: 4px;
-}
 .file-container {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 24px;
-  width: 392px;
-  height: 120px;
+  position: relative;
+  width: 100% !important;
+  top:-8rem;
+  height: 100px;
   background: #f7fafa;
   border: 1px dashed #d2d6d6;
   border-radius: 4px;
 }
-.img-card {
-  height: 7rem;
-}
 .info-container {
   position: relative;
-  top: -32px;
+  top: 10px;
   box-sizing: border-box;
   padding: 16px 13px;
   gap: 10px;
@@ -68,53 +45,23 @@
   color: #5e6566;
   line-height: 20px;
 }
-.uploading-text {
+.progress {
+  height: 3px !important;
+  width: 80% !important;
   position: relative;
-  top: 4px;
-  left: 14px;
-  font-size: 10px;
-  color: #a4b1b3;
-  font-weight: 900;
-}
-.progress-sec {
-  position: relative;
-  left: 15px;
-  top: -8px;
-  width: 392px;
-  gap: 10px;
-}
-.pro-field {
-  padding: 4px 16px 4px 0px;
-  gap: 8px;
-  width: 336px;
-  height: 28px;
-  border-radius: 0px 4px 4px 0px;
-}
-.font-fix {
-  width: 263px;
-  height: 20px;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 14px;
-  color: #303333;
-}
-.close-fix {
-  position: relative;
-  top: -2px;
-  left: -20px;
-  height: 9.33px;
-}
-.progress-fill {
-  width: 336px;
-  position: relative;
-  left: 48px;
-  top: -14px;
-}
-.progress-fix {
-  height: 4px !important;
+  left: 30px !important;
 }
 .progress-bar {
-  background-color: #54BDC7 !important;
+  background-color: #54bdc7 !important;
+}
+.custom-input {
+  position:relative !important;
+  top: -5rem !important;
+  left: 4px !important;
+  height: 118px;
+  width: 21rem !important;
+  outline: none;
+  background-color: none !important;
+  border: none !important;
+  opacity: 0;
 }

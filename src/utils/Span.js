@@ -1,10 +1,21 @@
-import React from 'react';
-import '../assets/css/span.css';
+import React from "react";
+import "../assets/css/span.css";
 
 const Span = (props) => {
-
-    return(
-        <span className='span-text' {...props}>{props.children}</span>
-    )
-}
+  const { color, fontSize, minwidth, fontWeight, className} = props;
+  return (
+    <span
+      className={className ? className : "span-text"}
+      style={{
+        color: `${color}`,
+        fontSize: `${fontSize}px`,
+        minWidth: `${minwidth}px`,
+        fontWeight: fontWeight,
+      }}
+      {...props}
+    >
+      {props.children}
+    </span>
+  );
+};
 export default Span;

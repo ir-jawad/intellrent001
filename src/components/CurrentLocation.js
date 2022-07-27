@@ -1,49 +1,55 @@
-import React from "react";
-import { Map, GoogleApiWrapper } from "google-maps-react";
+import React, { useEffect } from "react";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 
-import Img from "../utils/Image";
 import Intro from "../utils/Intro";
-import Review from "../utils/Review";
-
-import Vector19 from "../assets/images/Vector19.png";
-
-import "../assets/css/address.css";
+import ScrollAble from "../utils/Scroll";
 
 const mapStyles = {
-  width: "100%",
-  height: "100%",
+  width: "85%",
+  height: "40%",
+  marginTop:'22px'
 };
 
 const CurrentLocation = (props) => {
-  const { show, text, setState } = props;
-
+  const { show, text, setState, setEdit, screenSize } = props;
+  useEffect(() => {
+    setTimeout(() => {
+      setState(show + 1);
+    }, 2000);
+  }, []);
   return (
-    <div>
-      <Intro
-        text={text}
-        show={show}
-        btnTxt="Edit ID type"
-        className="custom-intro-container"
-      />
-      <div className="address-container">
-        <div className="">
-          <Map
-            google={props.google}
-            zoom={8}
-            style={mapStyles}
-            initialCenter={{ lat: 47.444, lng: -122.176 }}
+    <React.Fragment>
+       <ScrollAble mobStyle={250}>
+       <Intro
+            onClick={() => {
+              setEdit(true);
+              setState(show - 1);
+            }}
+            text={text}
+            show={show}
+            btnTxt="Edit ID type"
+            screenSize={screenSize}
+            outline='primary-outline' size='xxl'
           />
-        </div>
-      </div>
-      <div className="search-sec">
-        <Img src={Vector19} />
-        <div></div>
-      </div>
-      <Review onClick={() => setState(show + 1)} btnText=" Home" />
-    </div>
+          <div className='p-0 container w-100'>
+            <div className='mt-1 w-100'>
+              <Map
+                onClick={(ev) => {
+                  // console.log("latitide = ", ev.lat);
+                  // console.log("longitude = ", ev.lng);
+                }}
+                google={props.google}
+                zoom={8}
+                style={screenSize.dynamicWidth <=375 ?{width:'128%', height:'150%'}:mapStyles}
+                initialCenter={{ lat: 47.444, lng: -122.176 }}
+              />
+            </div>
+          </div>
+       </ScrollAble>
+    </React.Fragment>
   );
 };
 
 export default GoogleApiWrapper({
-  apiKey: "",
+  apiKey: "AIzaSyASZJAIrO87ewZri0VQj9_ZtdQLwn-85Dg",
 })(CurrentLocation);

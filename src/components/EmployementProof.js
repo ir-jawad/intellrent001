@@ -8,50 +8,71 @@ import Text from "../utils/Text";
 import Pen from "../assets/images/Pen.png";
 import HouseImg from "../assets/images/HouseImg.png";
 import Envelop from "../assets/images/Envelop.png";
-
-import "../assets/css/uploadid.css";
+import ScrollAble from "../utils/Scroll";
 
 const EmploymentProof = (props) => {
-  const { show, text, setState } = props;
+  const { show, text, setState, screenSize } = props;
 
   return (
-    <div>
-      <Intro
+    <React.Fragment>
+     <ScrollAble mobStyle={290}>
+     <Intro
+        onClick={() => setState(show - 1)}
         text={text}
         show={show}
         btnTxt="Edit SSN information"
-        className="custom-intro-container"
+        outline="primary-outline"
+        size="xxl"
+        screenSize={screenSize}
       />
-      <div className="mt-1">
-        <div className="id-container h-30">
+      <div className="container w-100 p-0 mt-1">
+        <div className="w-100 mt-2 d-flex justify-content-between flex-column align-items-end ">
           <OutlineButton
+            outline="secondary-outline"
+            size="xl"
             onClick={() => setState(show + 1)}
-            style={{ width: "302px", height: "32px" }}
           >
-            <div className="btn-flex">
-              <Img src={Envelop} style={{ width: "18px", height: "16px" }} />
-              <Text className="group-text-btn">
-                Current pay stubs (last 2 months)
+            <div className="mt-1 d-flex justify-content-center align-items-center">
+              <div>
+                {" "}
+                <Img src={Envelop} top={-18} />
+              </div>
+              <div>
+                {" "}
+                <Text className='' fontSize={16} left={5} width={250} color="#1496A2">
+                  Current pay stubs (last 2 months)
+                </Text>
+              </div>
+            </div>
+          </OutlineButton>
+          <OutlineButton outline="secondary-outline" size="xl" top={13}>
+            <div className="mt-1 d-flex flex-row justify-content-around align-items-center">
+              {" "}
+              <div>
+                {" "}
+                <Img src={HouseImg} top={-18} />
+              </div>
+              <div>
+                {" "}
+                <Text className='' fontSize={16} left={5} color="#1496A2">
+                  Bank statements
+                </Text>
+              </div>
+            </div>
+          </OutlineButton>
+          <OutlineButton outline="secondary-outline" size="xl" top={25}>
+            <div className="mt-1 d-flex flex-row justify-content-around align-items-center">
+              {" "}
+              <Img src={Pen} top={-18} />
+              <Text className='' fontSize={16} left={5} color="#1496A2">
+                Official offer letter
               </Text>
-            </div>
-          </OutlineButton>
-          <OutlineButton style={{ width: "175px", height: "32px" }}>
-            <div className="btn-flex">
-              {" "}
-              <Img src={HouseImg} style={{ width: "18px", height: "16px" }} />
-              <Text className="group-text-btn">Bank statements</Text>
-            </div>
-          </OutlineButton>
-          <OutlineButton style={{ width: "188px", height: "32px" }}>
-            <div className="btn-flex">
-              {" "}
-              <Img src={Pen} style={{ width: "18px", height: "16px" }} />
-              <Text className="group-text-btn">Official offer letter</Text>
             </div>
           </OutlineButton>
         </div>
       </div>
-    </div>
+     </ScrollAble>
+    </React.Fragment>
   );
 };
 

@@ -1,12 +1,16 @@
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
 
 import Home from '../pages/Home';
 import Registration from '../pages/Registration';
 import Login from '../pages/Login';
 import ForgetPassword from '../pages/ForgetPassword';
+import MiniHeader from '../components/MiniHeader';
 
 const NavigationRoutes = () => {
+    const location = useLocation();
     return (
+       <>
+      <MiniHeader miniCheck={location?.state?.data} path={location.pathname}/>
         <Routes>
             <Route exact path='/' element={<Home />}></Route>
             <Route exact path='/register' element={<Registration />}></Route>
@@ -17,6 +21,7 @@ const NavigationRoutes = () => {
                 element={<Navigate to="/" />}
             />
         </Routes>
+       </>
     )
 }
 

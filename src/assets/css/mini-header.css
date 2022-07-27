@@ -1,7 +1,13 @@
-.mini__header-brand {
-    font-family: var(--font);
-  }
-  
-  .mini__header-special {
-    color: var(--blue);
-  }
+.min-card-container {
+  box-sizing: border-box;
+  padding: 8px;
+  width: 327px;
+  height: 56px;
+  background: #ffffff;
+  border-radius: 4px;
+}
+.custom-menu {
+  width: 64px;
+  height: 24px;
+  gap:26px;
+}

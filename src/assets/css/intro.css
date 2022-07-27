@@ -1,16 +1,25 @@
 .intro-section {
-    width: 265px;
-    margin-top: 50px;
+  width: 375px;
+  margin-top: 50px;
+}
+
+.intro-text {
+  font-family: var(--font-lora);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--grey);
+}
+
+.em {
+  color: green;
+}
+.mob-potriat {
+  position: relative;
+  left: -109px;
+}
+@media (max-width: 375px) {
+  .position-fixed {
+    top:6rem;
   }
-  
-  .intro-text {
-    font-family: var(--font-lora);
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
-    color: var(--grey);
-  }
-  .custom-intro-container {
-    width: 406px;
-    height: 72px;
-  }
+}

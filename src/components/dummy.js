@@ -20,6 +20,16 @@ import image29 from "../assets/images/image29.png";
 import image28 from "../assets/images/image28.png";
 import image27 from "../assets/images/image27.png";
 
+// --------- Info Images ----------
+
+import Info1 from '../assets/images/Info1.png';
+import Info2 from '../assets/images/Info2.png';
+import Info3 from '../assets/images/Info3.png';
+import Info4 from '../assets/images/Info4.png';
+import Info5 from '../assets/images/Info5.png';
+import Info6 from '../assets/images/Info6.png';
+
+
 export const rentalDetail = [
   {
     image: Vector10,
@@ -29,6 +39,11 @@ export const rentalDetail = [
   {
     image: Vector11,
     description: "Contact info for current & previous tenancy",
+  },
+  {
+    image: Vector15,
+    description: "Government Issued Photo ID",
+    process: "Upload Now",
   },
   {
     image: Vector12,
@@ -44,11 +59,6 @@ export const rentalDetail = [
     description: "Soft pull credit report by",
     ref: Group21,
     credit: "above 650",
-  },
-  {
-    image: Vector15,
-    description: "Government Issued Photo ID",
-    process: "Upload Now",
   },
 ];
 
@@ -135,16 +145,103 @@ export const rentellSteps = [
     description: "Confirm current employment details",
   },
   {
-    description: "What proof of employment would you like to submit? ",
+    description: "Select a bank account to connect",
+  },
+  {
+    description: "What proof of employment would you like to submit?",
   },
   {
     description: "Upload the pay stubs here",
   },
   {
-    description: "Select a bank account to connect",
+    description: "If you’d like to upload another document, you can do so below."
   },
+  {
+    description: "Would you like to add an additional income source?"
+  },
+  {
+    description: "Do you have a vehicle? 🚙"
+  },
+  {
+    description: "What’s the license plate number"
+  },
+  {
+    description: "Confirm your vehicle details"
+  },
+  {
+    description: "🐕 🐈 Do you have a pet or service animal? "
+  },
+  {
+    description: "How many do you have?"
+  },
+  {
+    description: "Tell us more about your first pet"
+  },
+  {
+    description: "Please upload a photo of your pet 🐕 "
+  },
+  {
+    description: "This is great! "
+  },
+  {
+    description: "We need to collect a little bit of background information. "
+  },
+  {
+    description: "Please explain your situation below"
+  },
+  {
+    description: "Have you (or anyone named in this application) ever been evicted from a tenancy or left owing money?"
+  },
+  {
+    description: "Please explain your situation below"
+  },
+  {
+    description: "Do you or any of the members of your household have pending criminal charges, or ever been convinced of, plead guilty or no contest to, any criminal offense(s) or had any criminal offense(s) other than traffic infractions that were disposed of other than by acquittal or a finding of ‘not guilty’?"
+  },
+  {
+    description: "Please read the following message and sign it indicating that you agree with our terms of service"
+  },
+  {
+    description: "We have some additional information we require"
+  },
+  {
+    description: "Please confirm the details by scrolling below on your Rental Application to proceed"
+  },
+  {
+    description: "Great! You’re almost done. Just enter your payment details to complete your rental application."
+  }
 ];
 
+export const Info = [
+  {
+    image: Info6,
+    description: "Are you interested in the optional parking (if offered for this property?)",
+  },
+  {
+    image: Info5,
+    description: "Do you have a motorcycle?",
+  },
+  {
+    image: Info4,
+    description: "Do you have a boat?",
+  },
+  {
+    image: Info2,
+    description: "Do you have a motorhome?",
+  },
+  {
+    image: Info3 ,
+    description: "Do you have a waterbed?",
+  },
+  {
+    image:  Info2,
+    description: "Do you have an aquarium?",
+  },
+  {
+    image: Info1,
+    description: "Do you or any of the other occupants smoke?"
+  }
+]
 export const historyFLag = [
   "🇬🇧 UK",
   "🇳🇬 Nigeria",
@@ -156,7 +253,6 @@ export const historyFLag = [
   "🇨🇳 China",
 ];
 export const bankData = [
-  image27,
   image28,
   image29,
   image30,
@@ -167,5 +263,29 @@ export const bankData = [
   image301,
   image281,
   image291,
-  image27,
 ];
+export const readDocx = [
+  {
+    heading:"Lorem ipsum dolor sit amet, consetetur",
+    paragraph:"sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+    list:["Lorem ipsum dolor sit amet, consetetur sadipscing elitr","Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."]
+  
+  },
+  {
+    heading:"At vero eos et accusam et justo",
+    paragraph:"duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. "
+  },
+  {
+    heading:"At vero eos et accusam et justo ",
+    list:[
+      "Duo dolores et ea rebum. Stet clita kasd gubergren",
+      "No sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elit",
+      "Duo dolores et ea rebum. Stet clita kasd gubergren",
+      "No sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitDuo dolores et ea rebum. Stet clita kasd gubergren",
+      "No sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitDuo"
+    ]
+  }
+]

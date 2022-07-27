@@ -1,16 +1,18 @@
 import React from "react";
 
 import OutlineButton from "../utils/OutlineButton";
+import Text from '../utils/Text';
 
 import "../assets/css/review.css";
 
 const Review = (props) => {
-  const { subText, btnText, className, onClick } = props;
+  
+  const { subText, btnText, btnClass, width, onClick, left, top, outline, size, fontSize} = props;
   return (
     <React.Fragment>
-      <h2 className="review mt-4">{subText}</h2>
-      <div className="text-end mt-3">
-        <OutlineButton className={className} onClick={onClick}>
+      <Text className='review'>{subText}</Text>
+      <div className={btnClass}>
+        <OutlineButton width={width} onClick={onClick} left={left} top={top} size={size} outline={outline} fontSize={fontSize}>
           {btnText}
         </OutlineButton>
       </div>

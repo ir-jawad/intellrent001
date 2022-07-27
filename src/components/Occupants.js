@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
 
@@ -7,16 +7,30 @@ import Intro from "../utils/Intro";
 import Text from "../utils/Text";
 import Img from "../utils/Image";
 import TextField from "../utils/TextField";
+import MiniCard from "../utils/MinCard";
+import ScrollAble from "../utils/Scroll";
 
 import Vector22 from "../assets/images/Vector22.png";
 import Vector23 from "../assets/images/Vector23.png";
 import Vector24 from "../assets/images/Vector24.png";
 
-import "../assets/css/adult.css";
 import "../assets/css/create-account.css";
 
 const Occupants = (props) => {
-  const { show, text, handleState, occupant } = props;
+  const [occupant, setOccupant] = useState(0);
+
+  const {
+    show,
+    text,
+    handleState,
+    spanIndex,
+    setState,
+    setAdult,
+    handleBlock,
+    setBlockActive,
+    activeBlock,
+    screenSize,
+  } = props;
 
   const validValues = {
     email: "",
@@ -31,35 +45,76 @@ const Occupants = (props) => {
   const registrationHandler = (data) => {
     console.log(data);
   };
+
+  const handleOccupant = (event) => {
+    event.stopPropagation();
+  };
+
   return (
-    <div>
-      <Intro
-        text={text}
-        show={show}
-        btnTxt={`${
-          show === 5 ? "View acceptance criteria" : "Edit my information"
-        }`}
-        className="custom-intro-container"
-      />
-      <div className="d-flex flex-column gap-2">
-        <div className="adult-container">
-          <div className="">
-            <Text> Older than 18 years </Text>
-          </div>
-          <div className=" d-flex flex-row age-container">
-            <Text className="bold-text">Adults</Text>
-            <div className="age-section">
-              <Img
-                onClick={() => handleState("removeOccupant")}
-                src={Vector22}
-              />
-              <Text className="plus-text">{occupant}</Text>
-              <Img onClick={() => handleState("addOccupant")} src={Vector23} />
+    <React.Fragment>
+      <ScrollAble mobStyle={show === 6 ? 220 : 320}>
+        <Intro
+          text={text}
+          show={show}
+          onClick={
+            show === 5
+              ? () => {
+                  setState(show - 1);
+                  setAdult(false);
+                }
+              : () => {
+                  setState(show - 1);
+                  setBlockActive(false);
+                }
+          }
+          btnTxt={`${
+            show === 5 ? "View acceptance criteria" : "Edit my information"
+          }`}
+          spanIndex={spanIndex}
+          screenSize={screenSize}
+          outline="outline-primary"
+          size="xxl"
+        />
+        <MiniCard className="container p-1 w-100 h-auto border-1 cursor-pointer">
+          <div onClick={(e) => handleBlock(e)}>
+            <Text height={5} left={6}>
+              {" "}
+              Older than 18 years{" "}
+            </Text>
+            <div className="h-auto d-flex justify-content-center ">
+              <Text fontSize={16} color="#303333" width={311} height={0}>
+                {" "}
+                Adults
+              </Text>
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className="w-25 d-flex justify-content-around align-items-center"
+              >
+                {" "}
+                <div
+                  onClick={() =>
+                    occupant === 0 ? null : setOccupant(occupant - 1)
+                  }
+                >
+                  {" "}
+                  <Img src={Vector22} />
+                </div>
+                <Text fontSize={14} height={4} lineheight={19} color="#303333">
+                  {occupant}
+                </Text>
+                <div
+                  onClick={() =>
+                    occupant >= 0 ? setOccupant(occupant + 1) : null
+                  }
+                >
+                  <Img src={Vector23} />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        {occupant > 0 && (
-          <div className="adult-container">
+        </MiniCard>
+        {activeBlock && (
+          <div className="w-100 h-auto">
             <Formik
               initialValues={validValues}
               validationSchema={errorSchema}
@@ -69,17 +124,26 @@ const Occupants = (props) => {
                 <React.Fragment>
                   {
                     <Form>
-                      <Text>Occupant {occupant}</Text>
-                      <div className="d-flex flex-row justify-content-between custom-field">
-                        <TextField
-                          className="fix-text"
-                          label="Email"
-                          name="email"
-                          type="email"
-                          placeholder="Email address"
-                        />
-                        <Img src={Vector24} />
+                      <div className="w-100 d-flex flex-column input-label">
+                        <div className="">
+                          <Text height={10} lineheight={26} left={13}>
+                            Occupant {occupant}
+                          </Text>
+                        </div>
+                        <div>
+                          {" "}
+                          <TextField
+                            className="info-form border-0"
+                            name="name"
+                            type="email"
+                            placeholder="Email address"
+                            background="#f7fafa"
+                          />
+                        </div>
                       </div>
+                      {!formik.errors.email && formik.touched.email ? (
+                        <Img src={Vector24} />
+                      ) : null}
                     </Form>
                   }
                 </React.Fragment>
@@ -87,14 +151,18 @@ const Occupants = (props) => {
             </Formik>
           </div>
         )}
-      </div>
-      <OutlineButton
-        onClick={() => handleState("adult-check")}
-        className="confirm-btn"
-      >
-        Continue
-      </OutlineButton>
-    </div>
+        <div className="mt-2 container d-flex align-items-end justify-content-end p-0">
+          <OutlineButton
+            outline="outline-secondary"
+            size="mdx"
+            onClick={() => {activeBlock && handleState("adult-check")}}
+          >
+            {" "}
+            Continue
+          </OutlineButton>
+        </div>
+      </ScrollAble>
+    </React.Fragment>
   );
 };
 

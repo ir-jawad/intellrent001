@@ -3,10 +3,8 @@ import React from "react";
 import Intro from "../utils/Intro";
 import Review from "../utils/Review";
 
-import "../assets/css/userConfirmation.css";
-
 const SelectProperty = (props) => {
-  const { show, text, setMap, setState } = props;
+  const { show, text, setMap, setState, spanIndex, screenSize } = props;
 
   const handleStates = () => {
     setMap(true);
@@ -14,15 +12,18 @@ const SelectProperty = (props) => {
   };
 
   return (
-    <div>
-      <Intro text={text} className="custom-intro-container" />
-      <Review
-        onClick={() => handleStates()}
-        show={show}
-        btnText="Enter property information"
-        className="btn-outline"
-      />
-    </div>
+    <React.Fragment>
+      <Intro
+            text={text}
+            spanIndex={spanIndex}
+            screenSize={screenSize}
+          />
+          <Review
+            onClick={() => handleStates()}
+            show={show}
+            btnText="Enter property information"
+          />
+    </React.Fragment>
   );
 };
 

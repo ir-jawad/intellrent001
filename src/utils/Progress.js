@@ -6,7 +6,7 @@ const config = {
     percent:100,
     colorCircle:"#E6F8FA",
     colorSlice:"#17ADBC",
-    size:"40px",
+    size:40,
     fontColor:"#8D9899",
     fontSize:"1rem",
     fontWeight:900
@@ -14,6 +14,7 @@ const config = {
 
 const Progress = (props) => {
     const {show} = props;
+   
     const [update, setUpdate] = useState(config);
     useEffect(() => {
           setUpdate({
